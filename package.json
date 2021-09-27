@@ -1,9 +1,9 @@
 {
-  "name": "hardhat-solidity-typescript-boilerplate",
-  "version": "1.0.0",
+  "name": "",
+  "version": "0.0.0",
   "main": "index.js",
-  "repository": "git@github.com:nicobevilacqua/hardhat-solidity-typescript-boilerplate.git",
-  "author": "Nicolas Bevilacqua <nicobevilacqua@gmail.com>",
+  "repository": "",
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "hardhat": "^2.6.4",
