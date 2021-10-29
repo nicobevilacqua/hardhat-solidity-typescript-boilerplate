@@ -8,13 +8,14 @@ async function main() {
 
   console.log('Greeter deployed to:', greeter.address);
 
-  // wait until the contract is available across the entire net
-  await new Promise((resolve) => setTimeout(resolve, 1000 * 30));
-
-  await run('verify:verify', {
-    address: greeter.address,
-    constructorArguments: ['Hello, Hardhat!'],
-  });
+  if (process.env.VERIFY) {
+    // wait until the contract is available across the entire net
+    await new Promise((resolve) => setTimeout(resolve, 1000 * 30));
+    await run('verify:verify', {
+      address: greeter.address,
+      constructorArguments: ['Hello, Hardhat!'],
+    });
+  }
 }
 
 main()

@@ -39,6 +39,9 @@ export default {
   networks: {
     hardhat: {
       initialBaseFeePerGas: 0, // workaround from https://github.com/sc-forks/solidity-coverage/issues/652#issuecomment-896330136 . Remove when that issue is closed.
+      forking: {
+        url: `https://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_KEY}`,
+      },
     },
 
     rinkeby: {
@@ -49,7 +52,7 @@ export default {
 
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
-    gasPrice: 21,
+    gasPrice: process.env.GAS_PRICE,
     coinmarketcap: process.env.CMC_KEY,
     currency: 'USD',
     outputFile: process.env.TO_FILE ? path.resolve(__dirname, 'gasReporterOutput.json') : undefined,
